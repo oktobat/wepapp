@@ -1,0 +1,394 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+
+@font-face {
+  font-family: 'fontSociety';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../css/SocietyEditor_Personal_Use.ttf') format('truetype');
+}
+
+
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none;}
+button:focus {outline: none;}
+
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif; }
+.wrap {position: relative; margin: 0 auto; width: 100%;}
+.en {font-family: 'fontSociety', sans-serif; color: #1392c9; font-weight: normal;  font-stretch: normal; font-style: normal;}
+
+mark { background: rgba(19, 146, 201, 0.2);}
+
+
+
+
+/*스플리팅*/
+
+.visual.motion .splitting .char, .about.motion .splitting .char,
+.portWeb.motion .splitting .char, .portDesign.motion .splitting .char,
+.social.motion .splitting .char {
+    display: inline-block;
+    animation: font-up 2.4s cubic-bezier(.10, 0, .10, 1) both;
+    animation-delay: calc(60ms * var(--char-index));}
+    
+@keyframes font-up {
+    0%{transform: translateY(30px); opacity: 0;}
+    80%{transform: translateY(30px); opacity: 0;}
+}
+
+
+
+
+
+
+
+
+/*공통요소*/
+.inner {width: 1400px; height: 100vh; margin: 0 auto; position: relative; } 
+
+
+/*menuOpen*/
+
+.menuOpen button.open { background: none; border: none; overflow: hidden; position: fixed; z-index: 1; right:50px; top:50px;}
+
+
+
+/*menuWrap의 기본 레이아웃*/
+
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 1000; background: #42a8d4;  overflow: hidden; }
+.menuOpen button.close {background: none; border: none; position: fixed; right:47px; top:44px;}
+
+
+
+.menuWrap .logotit .logo {font-size: 40px; color: #ffffff; margin-top:35px; font-weight: normal; z-index: 500; text-align: center;}
+
+.menuWrap .logotit .logo a {display: block; width: 100%;height: 100%;}
+
+.menuWrap .logotit .sideMenu .gnb {position: fixed; top: 44%; left: 50px; color:#fff; font-weight: normal; writing-mode: vertical-lr; transform: rotate(-180deg); transform: translateY(-50%,-50%); z-index: 500;}
+
+.menuWrap .logotit .sideMenu .tnb {position: fixed; top: 50%; right: 50px;  font-size: 16px; color:#fff; font-weight: normal; writing-mode: vertical-lr; transform: translateY(-50%); z-index: 500;}
+
+
+
+.menuOpen .menuWrap .tit {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);color: #fff;  font-size: 90px; font-weight: 900; line-height: 1; text-align: center;}
+.menuOpen .menuWrap .tit li {margin-top: 26px;}
+
+/*.menuOpen .menuWrap .txt { position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); color: #000; font-size: 90px; font-weight: 900; line-height: 1.3; text-align: center;}*/
+
+.menuOpen .menuWrap .bottom {position: absolute; bottom: 0%; left: 50%; transform: translate(-50%, -50%); color: #fff; margin-bottom: 36px;}
+
+
+.menuOpen .menuWrap .bottom li { float: left; margin-left: 34px;}
+.menuOpen .menuWrap .bottom li:nth-child(3) {margin-left: 22px;}
+
+.menuOpen .menuWrap .tit li a:hover {color:#242424;content: 'WebDesigner';font-family: 'fontSociety', sans-serif;  font-size: 120px; transition: 0.5s; }
+
+
+
+/*menuWrap 열기*/
+.menuOpen .menuWrap {width: 0; transition: 0s; overflow: hidden; transform: skewY(40deg); opacity: 0;}
+.menuOpen .menuWrap.on{width: 100%; right: 0; transform: skewY(0deg); transition: all 0.5s; opacity: 1;}
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;}
+
+
+.innerHeader {max-width: 1920px; width: 227px; margin: 0 auto; }
+.innerHeader .logo {text-align: center; font-size: 40px; color: #1392c9; margin-top:35px; position: fixed; font-weight: normal; z-index: 100;}
+.innerHeader .logo a {display: block; width: 100%;height: 100%;}
+
+header .sideMenu .gnb {position: fixed; top: 44%; left: 50px; color:#2b2b2b; font-weight: normal; writing-mode: vertical-lr; transform: rotate(-180deg); transform: translateY(-50%,-50%); z-index: 300;}
+
+header .sideMenu .tnb {position: fixed; top: 50%; right: 50px;  font-size: 16px; color:#2b2b2b; font-weight: normal; writing-mode: vertical-lr; transform: translateY(-50%); z-index: 300;}
+
+
+
+
+
+
+/*section.visual*/
+
+section.visual {max-width: 1920px; margin: 0 auto; overflow: hidden; position: relative;}
+
+
+section.visual .inner .mainImg {width: 100%;position: absolute; top: 20%; overflow: hidden; margin-top: 90px;}
+section.visual .inner .mainImg img {height: 495px;}
+
+
+section.visual .font {font-size: 146px; position: absolute; top: 17%; right: 0%; z-index: 1; opacity: 80%; margin-top: 90px;}
+ 
+section.visual .inner .mainTxt {width: 100%;position: absolute; top:20%; right: 0%; text-align: right; margin-top: 90px;}
+
+section.visual .inner .mainTxt .tit {font-size: 90px;font-weight: 900; line-height: 1; margin-top: 40px;}
+section.visual .inner .mainTxt .txt {margin-top: 20px;}
+
+section.visual .inner .mainTxt .txt h3 {font-size: 22px;font-weight: bold; color: #2b2b2b; margin-top: 26px;}
+section.visual .inner .mainTxt .txt p {font-size: 17px; color: #2b2b2b; margin-top: 12px; line-height: 1.8;}
+
+section.visual .inner .mainTxt .txt .moreBtn {display: inline-block; padding: 8px 40px; margin-top: 42px; border: 1px solid #2b2b2b; font-size: 14px;}
+
+
+
+section.visual .inner .mainTxt .txt .moreBtn:hover,
+section.visual .inner .mainTxt .txt .moreBtn:focus {background: #1392c9; color: #fff; border: none;}
+
+section.visual .inner .scrollbtn {width: 100%; margin: 0 auto;  position: absolute; text-align: center; bottom: 4%;}
+
+section.visual .inner .scrollbtn img {width:166px; height: 96px;}
+section.visual .inner .scrolltxt {width: 100%; margin: 0 auto;  position: absolute; text-align: center; bottom: 30px;; color: #2b2b2b; font-size: 14px;}
+
+
+
+
+/*.visual.motion Ani*/
+
+.visual.motion .mainTxt {animation-name:slide-up; animation-duration: 2s; }
+.visual.motion .mainImg{animation-name:slide-up; animation-duration: 2.2s;}
+
+
+.visual.motion .scrollbtn {animation-name:slide-up; animation-duration: 2.6s;}
+.visual.motion .scrolltxt {animation-name:slide-up; animation-duration: 2.8s;}
+
+
+@keyframes slide-up {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(40px);}
+}
+
+
+section.about {margin-top: 10px;}
+section.about .en {font-size: 146px; position: absolute; top: 26%; left: 0%; opacity: 80%; z-index: 1;}
+section.about .tit {width: 100%; position: absolute; top:30%; left: 0%; font-size: 90px;font-weight: 900; line-height: 1; margin-top: 40px;}
+
+section.about .profile h3 {position: absolute; top:48%; left: 18%; font-size: 20px; }
+
+section.about .profile .txt {position: absolute; top:48%; left: 24%; font-size: 18px; line-height: 1.8;}
+
+section.about .right  {position: absolute; bottom: 31%; right: 0%; font-size: 75px; line-height: 1.2; font-weight: bold; transform: rotate(-90deg); font-weight: 900;}
+section.about .right li:hover,section.About .right li:focus {color: #1392c9; }
+
+
+
+/*about ani*/
+.about.motion .tit {animation-name: about-slide; animation-duration: 1.2s;}
+
+
+.about.motion .profile h3 {animation-name: about-slide; animation-duration: 1.2s;}
+
+.about.motion .profile .txt{animation-name: about-slide; animation-duration: 1.2s;}
+
+
+
+
+@keyframes about-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateX(-80px);}
+}
+
+.about.motion .right li{animation-name: about-right; animation-duration: 2s;}
+.about.motion .right li:nth-child(2){ animation-duration: 2.4s;}
+.about.motion .right li:nth-child(3){ animation-duration: 2.8s;}
+.about.motion .right li:nth-child(4){ animation-duration: 3s;}
+
+
+
+@keyframes about-right {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(80px);}
+}
+
+
+
+
+
+
+/*section.portWeb*/
+
+section.portWeb .portimg{width: 100%; position: absolute; top: 17%; left: 0%; }
+
+section.portWeb .tit .en {font-size: 90px; position: absolute; bottom: 46%; left: 56%; opacity: 80%; z-index: 1;}
+section.portWeb .tit .mainTit {position: absolute; top: 33%; left: 53%; z-index: 1; font-size: 90px; font-weight: 900;}
+section.portWeb .tit .leftTag {font-size: 90px;  position: absolute; bottom: 45%; left: 53%; color: #1392c9;opacity: 80%; font-weight:500;}
+
+section.portWeb .tit .rightTag {font-size: 90px;  position: absolute; bottom: 45%; right: 6%; color: #1392c9;opacity: 80%; font-weight:500;}
+
+section.portWeb .txt {text-align: right; position: absolute; bottom: 36%; right: 7%; font-size: 17px; line-height: 1.8}
+
+
+
+
+
+/*portWeb ani*/
+
+
+
+
+
+.portWeb.motion .tit .mainTit{animation-name: portWeb-slide; animation-duration: 2s;}
+.portWeb.motion .tit .leftTag{animation-name: portWeb-slide; animation-duration: 2s;}
+.portWeb.motion .tit .rightTag{animation-name: portWeb-slide; animation-duration: 2s;}
+
+.portWeb.motion .portimg {animation-name: portWeb-slide; animation-duration: 2.4s;}
+
+.portWeb.motion .txt {animation-name: portWeb-slide; animation-duration: 2.4s;}
+
+
+
+@keyframes portWeb-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(80px);}
+}
+
+
+
+
+
+
+
+/*section.portDesign*/
+section.portDesign {width: 100%; margin: 0 auto; overflow: hidden;}
+section.portDesign .designinner {width: 1400px; margin:0 auto; overflow: hidden; position: relative; }
+section.portDesign .top .tit {font-size: 100px; margin-left: 1010px; margin-top: 96px;}
+
+section.portDesign .top p { margin-left: 780px; margin-top: 50px; margin-right: 106px; text-align: right; font-size: 17px; line-height: 1.8; font-weight: 500;}
+
+section.portDesign .bottom {padding-left: 50px; width: 100%; box-sizing: border-box;}
+section.portDesign .bottom li { margin-top: 30px; width: 100%;}
+section.portDesign .bottom li img{width: 88%;}
+section.portDesign .bottom li h3 {margin-top: 25px; font-weight: 500;}
+section.portDesign .bottom li p {margin-top: 10px; font-size: 15px; font-weight: 400;}
+
+section.portDesign .arrow .left {cursor: pointer; position: absolute; left: 0%; bottom: 30%; }
+section.portDesign .arrow .right {cursor: pointer; position: absolute; right: 0%; bottom: 30%;}
+
+
+
+/*section.portDesign Ani*/
+
+section.portDesign .designImg {width: 321px; height: 156px; position: absolute; top: 11%; right: 7%;}
+.designImg .svgAni polyline {fill:none; stroke:#373737; stroke-width:1; stroke-dasharray:1020; stroke-dashoffset:0; stroke-linejoin:round;}
+
+.designImg.motion .svgAni polyline {animation-name: dash; animation-duration: 1.5s;}
+
+@keyframes dash {
+    0%{stroke-dashoffset:1020;}
+    100%{stroke-dashoffset:0;}	
+
+}
+
+
+
+
+.portDesign .top.motion p {animation-name: portDesign-slide; animation-duration: 2.4s;}
+
+@keyframes portDesign-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(80px);}
+}
+.portDesign .bottom.motion li {animation-name: portDesign-slide; animation-duration: 2.4s;}
+
+@keyframes portDesign-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(80px);}
+}
+
+.portDesign .arrow.motion p{animation-name: portDesign-slide; animation-duration: 2.4s;}
+
+@keyframes portDesign-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(80px);}
+}
+
+
+
+
+/*section.social*/
+
+section.social {margin-top: 120px; margin-bottom: 230px;}
+
+
+section.social .en {font-size: 146px; position: absolute; top: 15%; left: 0%; opacity: 80%; z-index: 1;
+}
+section.social .tit {width: 100%; position: absolute; top:23%; left: 0%; font-size: 90px;font-weight: 900; line-height: 1; }
+
+section.social .txt {position: absolute; top:40%; left: 30px; font-size: 17px; color: #2b2b2b; line-height: 1.8;}
+
+section.social .txt .moreBtn {display: inline-block; padding: 8px 40px; margin-top: 42px; border: 1px solid #2b2b2b; font-size: 14px;}
+
+
+
+section.social .txt .moreBtn:hover,section.social .txt .moreBtn:focus {background: #1392c9; color: #fff; border: none;}
+
+
+section.social .rightImg {display: flex; position: absolute; top:40%; left: 44%;}
+
+section.social .rightImg li {margin-left: 28px;}
+section.social .rightImg li:nth-child(1) {margin-left: 0;}
+
+
+
+
+
+
+.social.motion .tit {animation-name: social-slide; animation-duration: 2s;}
+.social.motion .txt {animation-name: socialtxt-slide; animation-duration: 2s;}
+.social.motion .rightImg li{animation-name: socialimg-slide; animation-duration: 2s;}
+
+
+@keyframes social-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(-80px);}
+}
+
+
+
+@keyframes socialtxt-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateX(-80px);}
+}
+
+@keyframes socialimg-slide {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(80px);}
+}
+
+
+
+
+footer {background: #434343; margin: 0 auto; overflow: hidden; position: relative; width: 100%;}
+
+footer .inner { width: 100%; height: 290px; display: flex; width: 1400px; margin: 0 auto; position: relative; }
+
+footer .inner .sns {display: flex; margin-top: 210px; color: #fff;}
+
+footer .inner .sns li {margin-left: 40px;}
+footer .inner .sns li:nth-child(1) {margin-left: 0;}
+footer .inner .center {margin-left: 200px;}
+
+footer .inner .center .logo{color: #fff; font-size: 40px; color: #fff; margin-top:62px; font-weight: normal; z-index: 100;}
+
+
+footer .inner .contact {margin: 62px 0 0 30px; color: #fff; font-size: 14px; line-height: 1.6; font-weight: 400}
+
+footer .inner .contact li b {font-weight: 400; font-size: 16px;}
+footer .inner .contact .txt {margin-top: 14px;}
+
+footer .inner .contact .txt b {font-weight: 600}
+footer .inner .contact .copy {margin-top: 30px; font-size: 13px;}
+
+footer .topbutton {position: absolute; top:190px; right: 50px; font-weight: normal;}
+
+
+
+
